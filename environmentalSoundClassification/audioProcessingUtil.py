@@ -612,47 +612,6 @@ class AudioProcessing(object):
         zero_crossing_rate =  librosa.feature.zero_crossing_rate(y=y, frame_length = n_fft, hop_length = hop_length)
         features = np.concatenate((features,zero_crossing_rate))
 
-        #
-        # window = np.hanning(n_fft)
-        #
-        # i = 0
-        # lpc_coefficients = []
-        # while i <= y.shape[0]:
-        #
-        #     window_end = i + n_fft
-        #     audio_end = y.shape[0]
-        #
-        #     if audio_end - i < n_fft:
-        #         d = y[i:]
-        #         d_len = len(d)
-        #         diff = n_fft - d_len
-        #
-        #         d = list(d)
-        #         for j in range(diff):
-        #             d.append(0)
-        #
-        #         d = np.array(d)
-        #         d = d*window
-        #     else:
-        #         d = y[i:window_end]
-        #         d = np.array(d)
-        #         d = d*window
-        #
-        #     lpcs,e,k = lpc(d,25)
-        #     lpcs = lpcs[1:]
-        #     lpc_coefficients.append(lpcs)
-        #     i = i + hop_length
-        #
-        # lpc_coefficients = np.array(lpc_coefficients)
-        #
-        #
-        # lpc_coefficients = np.transpose(np.array(lpc_coefficients))
-        # lpc_coefficients = lpc_coefficients.astype(np.float64)
-
-
-        # features = np.concatenate((features,lpc_coefficients))
-
-
         return np.transpose(features)
 
     @staticmethod
