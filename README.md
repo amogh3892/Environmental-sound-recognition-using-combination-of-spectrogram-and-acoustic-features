@@ -31,16 +31,33 @@ http://esatjournals.net/ijret/2017v06/i10/IJRET20170610015.pdf
 8.  By considering the left most and right most location of each of the connected component, extract corresponding segments in the time domain. Figure1(d) shows the obtained segments in the time domain 
 9.  Extract the prominent part of the signal.  Figure1(e) shows  the extracted prominent part of the signal.
 
-### Feature Extraction 
-#### First Set of Features
+### Feature Extraction
+
+#### **First Set of Features**
 1.  Divide the obtained spectrogram of the image and divide into four equal frequency bands (sub bands).
 2.  Compute first order statistics and glcm features for each of the sub bands.
 
-##### First order statistics
+##### **First order statistics**
 Minimum,mean, median, variance, energy, entropy, tenth percentile pixel value, ninetieth percentile pixel value, inter quartile range, mean absolute deviation, robust mean absolute deviation, root mean square error, skewness and kurtosis. 
 
-##### GLCM features (Combination of angles (0,45,90,135), displacement vectors (3,5))
+##### **GLCM features (Combination of angles (0,45,90,135), displacement vectors (3,5))**
 Energy, contrast, correlation, sum of squares, inverse of difference moment, sum average, sum entropy, sum variance, entropy, difference variance, difference entropy, and two descriptors of information measure of correlation.
+
+#### **Second Set of Features**
+Extracted with window length of 20ms and 75% overlap between frames 
+
+MFCCs (Mel Frequency Cepstral Coefficients), Delta MFCCs, ZCR (Zero Crossing Rate), RMSE (Root Mean Square Error), spectral centroid, spectral bandwidth, spectral contrast and spectral rolloff 
+
+### Classification
+Four different models
+1.  SIF (Spectrogram Image Features) Model
+  - Trained Separately on **First Set of Features**
+2.  AF  (Acoustic Features) Model
+  - Trained Separately on **Second Set of Features**
+3.  ASIF  (Acoustic and Spectrogram Image Features) Model
+  - Trained with both  **First Set of Features** and **Second Set of Features** combined in the feature space.
+4.  MEASIF (Modified Ensemble of Acoustic and Spectrogram Image Features) Model
+  - Modified Ensemble of SIF and AF models. Figure-3 shows the architecture of MEASIF Model
 
 ## Results
 To Evaluate the approach, ESC-10 dataset available at https://github.com/karoldvl/ESC-10 was used.
