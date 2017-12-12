@@ -111,7 +111,7 @@ class SpectrogramClassifier(SoundClassifier):
                     seg_data = data[segment[0]:segment[1]]
 
                     # obtaining spectrogram with higher resolution of the segment
-                    seg_spec = AudioProcessing.get_spectrogram(seg_data,n_fft=2*n_fft,win_length=win_length,hop_length=hop_length/2,range=spec_range,pixel_type = spec_pixel_type,log_amplitude=spec_log_amplitude)
+                    seg_spec = AudioProcessing.get_spectrogram(seg_data,n_fft=2*n_fft,win_length=win_length,hop_length=int(hop_length/2),range=spec_range,pixel_type = spec_pixel_type,log_amplitude=spec_log_amplitude)
 
                     # median filtering with radius - 3
                     med = ImageProcessing.median_image_filter(seg_spec,radius=(3,3,3))

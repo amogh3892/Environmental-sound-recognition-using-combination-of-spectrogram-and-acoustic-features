@@ -223,13 +223,13 @@ class ImageProcessing(object):
 
 
         # dividing the image into 4 parts wrt y axis
-        seg_size = image.shape[0]/4
+        seg_size = int(image.shape[0]/4)
 
         pixelFeatures = None
 
         for i in range(4):
 
-            seg_image = image[i*seg_size:(i+1)*seg_size,:]
+            seg_image = image[int(i*seg_size):int((i+1)*seg_size),:]
 
             minimums = []
             maximums = []
@@ -325,7 +325,7 @@ class ImageProcessing(object):
 
         for i in range(4):
 
-            seg_image = image[i*seg_size:(i+1)*seg_size,:]
+            seg_image = image[int(i*seg_size):int((i+1)*seg_size),:]
 
             glcm = greycomatrix(seg_image,distances, angles, 256, symmetric=True, normed=True)
 
@@ -457,117 +457,6 @@ class ImageProcessing(object):
         med = sitk.Median(image,radius)
 
         return sitk.GetArrayFromImage(med)
-
-
-    # @staticmethod
-    # def getGLCMFeatures(image,labelled_image,distances = [1,3,5],angles =[0,np.pi/4.0,np.pi/2.0, 3*np.pi/4.0]):
-    #     if isinstance(image,(sitk.Image)):
-    #         image = sitk.GetArrayFromImage(image)
-    #
-    #     if isinstance(labelled_image,(sitk.Image)):
-    #         labelled_image = sitk.GetArrayFromImage(labelled_image)
-    #
-    #     max_label = np.max(labelled_image)
-    #
-    #     glcm_features = []
-    #
-    #     for i in range(1,max_label+1):
-    #
-    #         single_labelled_image = np.copy(labelled_image)
-    #         single_labelled_image[single_labelled_image != i] = 0
-    #         single_labelled_image[single_labelled_image == i] = 1
-    #
-    #         indices = np.where(single_labelled_image == 1)
-    #
-    #         min_x = np.min(indices[0])
-    #         max_x = np.max(indices[0])
-    #         min_y = np.min(indices[1])
-    #         max_y = np.max(indices[1])
-    #
-    #         patch = image[min_x:max_x,min_y:max_y]
-    #
-    #         glcm_feature_vector = []
-    #
-    #         glcm = greycomatrix(patch,distances, angles, 256, symmetric=True, normed=True)
-    #
-    #         for j in range(len(distances)):
-    #             for k in range(len(angles)):
-    #
-    #                 contrast = greycoprops(glcm, 'contrast')[j, k]
-    #                 glcm_feature_vector.append(contrast)
-    #
-    #                 dissimilarity = greycoprops(glcm, 'dissimilarity')[j, k]
-    #                 glcm_feature_vector.append(dissimilarity)
-    #
-    #                 homogeneity = greycoprops(glcm, 'homogeneity')[j, k]
-    #                 glcm_feature_vector.append(homogeneity)
-    #
-    #                 ASM = greycoprops(glcm, 'ASM')[j, k]
-    #                 glcm_feature_vector.append(ASM)
-    #
-    #                 energy = greycoprops(glcm, 'energy')[j, k]
-    #                 glcm_feature_vector.append(energy)
-    #
-    #                 correlation = greycoprops(glcm, 'correlation')[j, k]
-    #                 glcm_feature_vector.append(correlation)
-    #
-    #         glcm_features.append(glcm_feature_vector)
-    #
-    #     glcm_features = np.array(glcm_features)
-    #     return glcm_features
-    #
-    #
-    # @staticmethod
-    # def getGLCMFeatureVector(image,distances = [1,3,5],angles =[0,np.pi/4.0,np.pi/2.0, 3*np.pi/4.0]):
-    #     if isinstance(image,(sitk.Image)):
-    #         image = sitk.GetArrayFromImage(image)
-    #
-    #     patch = image
-    #
-    #     glcm_feature_vector = []
-    #
-    #     glcm = greycomatrix(patch,distances, angles, 256, symmetric=True, normed=True)
-    #
-    #     for j in range(len(distances)):
-    #         for k in range(len(angles)):
-    #
-    #             contrast = greycoprops(glcm, 'contrast')[j, k]
-    #             glcm_feature_vector.append(contrast)
-    #
-    #             dissimilarity = greycoprops(glcm, 'dissimilarity')[j, k]
-    #             glcm_feature_vector.append(dissimilarity)
-    #
-    #             homogeneity = greycoprops(glcm, 'homogeneity')[j, k]
-    #             glcm_feature_vector.append(homogeneity)
-    #
-    #             ASM = greycoprops(glcm, 'ASM')[j, k]
-    #             glcm_feature_vector.append(ASM)
-    #
-    #             energy = greycoprops(glcm, 'energy')[j, k]
-    #             glcm_feature_vector.append(energy)
-    #
-    #             correlation = greycoprops(glcm, 'correlation')[j, k]
-    #             glcm_feature_vector.append(correlation)
-    #
-    #
-    #     glcm_feature_vector = np.column_stack(glcm_feature_vector)
-    #     return glcm_feature_vector
-    #
-    # @staticmethod
-    # def getGLCMColumnNames(distances = [1,3,5],angles =[0,np.pi/4.0,np.pi/2.0, 3*np.pi/4.0]):
-    #     glcm_columns = []
-    #
-    #     for j in range(len(distances)):
-    #         for k in range(len(angles)):
-    #             glcm_columns.append('GlCM_CONTRAST_{}_{}'.format(distances[j],angles[k]))
-    #             glcm_columns.append('GlCM_DISSIMILARITY_{}_{}'.format(distances[j],angles[k]))
-    #             glcm_columns.append('GlCM_HOMOGENEITY_{}_{}'.format(distances[j],angles[k]))
-    #             glcm_columns.append('GlCM_ASM_{}_{}'.format(distances[j],angles[k]))
-    #             glcm_columns.append('GlCM_ENERGY_{}_{}'.format(distances[j],angles[k]))
-    #             glcm_columns.append('GlCM_CORRELATION_{}_{}'.format(distances[j],angles[k]))
-    #
-    #     return glcm_columns
-
 
 
 
