@@ -49,14 +49,16 @@ Extracted with window length of 20ms and 75% overlap between frames
 MFCCs (Mel Frequency Cepstral Coefficients), Delta MFCCs, ZCR (Zero Crossing Rate), RMSE (Root Mean Square Error), spectral centroid, spectral bandwidth, spectral contrast and spectral rolloff 
 
 ### Classification
+
 Four different models
-1.  SIF (Spectrogram Image Features) Model
+
+-  SIF (Spectrogram Image Features) Model
   - Trained Separately on **First Set of Features**
-2.  AF  (Acoustic Features) Model
+-  AF  (Acoustic Features) Model
   - Trained Separately on **Second Set of Features**
-3.  ASIF  (Acoustic and Spectrogram Image Features) Model
+-  ASIF  (Acoustic and Spectrogram Image Features) Model
   - Trained with both  **First Set of Features** and **Second Set of Features** combined in the feature space.
-4.  MEASIF (Modified Ensemble of Acoustic and Spectrogram Image Features) Model
+-  MEASIF (Modified Ensemble of Acoustic and Spectrogram Image Features) Model
   - Modified Ensemble of SIF and AF models. Figure-3 shows the architecture of MEASIF Model
 
 ## Results
