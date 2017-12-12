@@ -53,13 +53,13 @@ MFCCs (Mel Frequency Cepstral Coefficients), Delta MFCCs, ZCR (Zero Crossing Rat
 Four different models
 
 -  SIF (Spectrogram Image Features) Model
-  - Trained Separately on **First Set of Features**
+    - Trained Separately on **First Set of Features**
 -  AF  (Acoustic Features) Model
-  - Trained Separately on **Second Set of Features**
+    - Trained Separately on **Second Set of Features**
 -  ASIF  (Acoustic and Spectrogram Image Features) Model
-  - Trained with both  **First Set of Features** and **Second Set of Features** combined in the feature space.
+    - Trained with both  **First Set of Features** and **Second Set of Features** combined in the feature space.
 -  MEASIF (Modified Ensemble of Acoustic and Spectrogram Image Features) Model
-  - Modified Ensemble of SIF and AF models. Figure-3 shows the architecture of MEASIF Model
+    - Modified Ensemble of SIF and AF models. Figure-3 shows the architecture of MEASIF Model
 
 ## Results
 To Evaluate the approach, ESC-10 dataset available at https://github.com/karoldvl/ESC-10 was used.
