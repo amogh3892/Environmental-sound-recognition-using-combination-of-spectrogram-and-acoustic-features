@@ -75,6 +75,9 @@ The ESC-10 is a selection of 10 classes from the bigger dataset ESC-50.
 
 The Frieburg-106 dataset was collected using a consumer level dynamic cardioid microphone. It contains 1,479 audio based human activities of 22 categories.
 
+All the models are trained on SVM classifier with “rbf” kernel and the cost parameter “C” set to 1e4.
+
 ![alt text](https://github.com/amogh3892/Environmental-sound-recognition-using-combination-of-spectrogram-and-acoustic-features/blob/master/Images/table1_results.png)
+
 
 ![alt text](https://github.com/amogh3892/Environmental-sound-recognition-using-combination-of-spectrogram-and-acoustic-features/blob/master/Images/table2_results.png)
