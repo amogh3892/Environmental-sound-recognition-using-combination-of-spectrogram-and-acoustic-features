@@ -21,6 +21,9 @@ http://esatjournals.net/ijret/2017v06/i10/IJRET20170610015.pdf
 ## Steps 
 
 ### Preprocessing
+
+![alt text](Environmental-sound-recognition-using-combination-of-spectrogram-and-acoustic-features/Images/dogbarkspecwithlabel.png)
+
 1.  Resampling the audio audio to 24,000 Hz and applying a high pass filter with a cut off frequency of 500Hz to remove the low frequency noise in the audio signals. 
 2.  Compute the decibel scaled spectrogram image of the audio. Calculate the spectrogram with an FFT size of 512 which gives a frequency resolution of 46.875 Hz corresponding to the sampling rate of 24,000Hz. 
 3.  For the hanning window,  a window length of 20ms with 75% overlap is used. 
