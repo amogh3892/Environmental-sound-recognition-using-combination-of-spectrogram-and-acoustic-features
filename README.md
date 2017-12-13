@@ -22,7 +22,11 @@ http://esatjournals.net/ijret/2017v06/i10/IJRET20170610015.pdf
 
 ### Preprocessing
 
-![alt text](https://github.com/amogh3892/Environmental-sound-recognition-using-combination-of-spectrogram-and-acoustic-features/blob/master/Images/dogbarkspecwithlabel.png)
+<p align="center">
+  <b>Figure 1</b><br>
+  <br><br>
+  <img src="https://github.com/amogh3892/Environmental-sound-recognition-using-combination-of-spectrogram-and-acoustic-features/blob/master/Images/dogbarkspecwithlabel.png">
+</p>
 
 1.  Resampling the audio audio to 24,000 Hz and applying a high pass filter with a cut off frequency of 500Hz to remove the low frequency noise in the audio signals. 
 2.  Compute the decibel scaled spectrogram image of the audio. Calculate the spectrogram with an FFT size of 512 which gives a frequency resolution of 46.875 Hz corresponding to the sampling rate of 24,000Hz. 
