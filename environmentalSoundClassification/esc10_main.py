@@ -40,9 +40,6 @@ def plot_confusion_matrix(cm, classes,
 
 if __name__ == "__main__":
 
-    import pdb
-    pdb.set_trace()
-
     db_name = 'esc10'
     db_src = r'Data\esc10\\'
     db_file_type = 'ogg'
@@ -65,8 +62,6 @@ if __name__ == "__main__":
 
     clf.save_features('Features/esc_10_main.xlsx')
 
-    import pdb
-    pdb.set_trace()
     # classification
 
     # getting mean accuracy for training without clusters
