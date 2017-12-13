@@ -23,9 +23,9 @@ http://esatjournals.net/ijret/2017v06/i10/IJRET20170610015.pdf
 ### Preprocessing
 
 <p align="center">
-  <b>Figure 1</b><br>
   <br><br>
   <img src="https://github.com/amogh3892/Environmental-sound-recognition-using-combination-of-spectrogram-and-acoustic-features/blob/master/Images/dogbarkspecwithlabel.png">
+   <b>Figure 1</b><br>
 </p>
 
 1.  Resampling the audio audio to 24,000 Hz and applying a high pass filter with a cut off frequency of 500Hz to remove the low frequency noise in the audio signals. 
@@ -57,7 +57,12 @@ MFCCs (Mel Frequency Cepstral Coefficients), Delta MFCCs, ZCR (Zero Crossing Rat
 
 ### Classification
 
-![alt text](https://github.com/amogh3892/Environmental-sound-recognition-using-combination-of-spectrogram-and-acoustic-features/blob/master/Images/MEASIF_architecture.png)
+<p align="center">
+  <br><br>
+  <img src="https://github.com/amogh3892/Environmental-sound-recognition-using-combination-of-spectrogram-and-acoustic-features/blob/master/Images/MEASIF_architecture.png">
+   <b>Figure 2</b><br>
+</p>
+
 
 Four different models
 
