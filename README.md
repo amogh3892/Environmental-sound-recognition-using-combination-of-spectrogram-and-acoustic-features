@@ -2,7 +2,7 @@
 Classification of environmental sounds using first order statistics and GLCM (Gray-Level Co-Occurrence Matrix ) features of a spectrogram 
 
 Please refer to the paper below for more information of the algorithm and results
-http://esatjournals.net/ijret/2017v06/i10/IJRET20170610015.pdf
+https://ijret.org/volumes/2017v06/i10/IJRET20170610015.pdf
 
 ## Requirements
 
